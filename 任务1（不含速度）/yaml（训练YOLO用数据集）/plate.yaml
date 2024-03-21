@@ -1,0 +1,5 @@
+train: G:\INeedChinese\dataset\CCPD2020\ccpd_base
+val: G:\INeedChinese\dataset\CCPD2020\ccpd_base
+
+nc: 1
+names: ['plate']

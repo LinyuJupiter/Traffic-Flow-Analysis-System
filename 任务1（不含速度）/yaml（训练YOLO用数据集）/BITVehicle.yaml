@@ -1,0 +1,6 @@
+train: G:\INeedChinese\dataset\BITVechicle\train
+val: G:\INeedChinese\dataset\BITVechicle\val
+
+nc: 6
+
+names: ['Bus', 'Microbus', 'Minivan', 'Sedan', 'SUV', 'Truck']

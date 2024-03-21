@@ -1,0 +1,6 @@
+train: G:\INeedChinese\dataset\DETRAC-train-data
+val: G:\INeedChinese\dataset\DETRAC-train-data
+
+nc: 7
+
+names: ['car', 'SUV', 'bus', 'taxi', 'truck', 'van', 'others']

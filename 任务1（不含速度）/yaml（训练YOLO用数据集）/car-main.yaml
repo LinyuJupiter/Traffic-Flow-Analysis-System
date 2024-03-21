@@ -1,0 +1,6 @@
+train: G:\INeedChinese\dataset\car-main
+val: G:\INeedChinese\dataset\car-main
+
+nc: 7
+
+names: ['car', 'SUV', 'bus', 'taxi', 'truck', 'van', 'others']

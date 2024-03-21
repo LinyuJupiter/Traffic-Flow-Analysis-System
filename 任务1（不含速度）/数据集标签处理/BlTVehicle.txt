@@ -1,0 +1,46 @@
+% 在matlab中使用
+
+mkdir('labels');
+
+for i = 1:length(VehicleInfo)
+    name = VehicleInfo(i).name;
+    height = VehicleInfo(i).height;
+    width = VehicleInfo(i).width;
+    nvehicles = VehicleInfo(i).nVehicles;
+
+    label_data = zeros(nvehicles, 5);
+
+    for j = 1:nvehicles
+        left = VehicleInfo(i).vehicles(j).left;
+        top = VehicleInfo(i).vehicles(j).top;
+        right = VehicleInfo(i).vehicles(j).right;
+        bottom = VehicleInfo(i).vehicles(j).bottom;
+        category = VehicleInfo(i).vehicles(j).category;
+
+        switch category
+            case 'Bus'
+                category = 0;
+            case 'Microbus'
+                category = 1;
+            case 'Minivan'
+                category = 2;
+            case 'Sedan'
+                category = 3;
+            case 'SUV'
+                category = 4;
+            case 'Truck'
+                category = 5;
+        end
+        
+        x_center = (left + right) / 2 / width;
+        y_center = (top + bottom) / 2 / height;
+        w = (right - left) / width;
+        h = (bottom - top) / height;
+        
+        label_data(j, :) = [category, x_center, y_center, w, h];
+    end
+
+    label_name = strrep(name, '.jpg', '.txt');
+    label_path = fullfile('labels', label_name);
+    dlmwrite(label_path, label_data, ' ');
+end
